@@ -10,7 +10,10 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="pays")
-@NamedQuery(name="Pay.findAll", query="SELECT p FROM Pay p")
+@NamedQueries({
+	@NamedQuery(name="Pay.findAll", query="SELECT p FROM Pay p"),
+	@NamedQuery(name="Pay.findByIdPays", query="SELECT p FROM Pay p WHERE p.idPays LIKE :recherche")
+})
 public class Pay2 implements Serializable {
 	private static final long serialVersionUID = 1L;
 
